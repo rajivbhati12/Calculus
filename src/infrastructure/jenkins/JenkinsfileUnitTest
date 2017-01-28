@@ -1,0 +1,13 @@
+
+/* Basic unit test jenkins file*/
+node{
+    stage('Preperation'){
+        build 'UnitTestJob'
+    }
+    stage('Test') {
+        echo "do test task here"
+    }
+    stage('Result') {
+        echo "do test conclusion task here"
+    }
+}

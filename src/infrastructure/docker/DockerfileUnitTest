@@ -1,0 +1,23 @@
+# Build image from unit test base
+FROM rajivbhati12/ubuntu_unit_test_base
+
+# Build argument to parametrize command
+ARG Command
+
+# Set default build command to run bash
+EVN Command ${Command:-"/bin/bash"}
+
+# Switch to root user for setup
+USER root
+
+# Create Project directory
+RUN mkdir -p /Calculus/src
+
+# Copy source code to image
+COPY src /Calculus/src
+
+# Switch back to testuser
+USER testuser
+
+# Execute build command
+CMD [${Command}]

@@ -5,7 +5,10 @@
 package main.java;
 public class Addition {
     public Addition(){}
-    public Integer addValues(Integer a, Integer b){
-        return a+ b;
+    public Integer addValues(Integer value1, Integer value2){
+        return value1 + value2;
+    }
+    public Integer addRandomValue(Integer value1, Integer digit){
+        return 5;
     }
 }

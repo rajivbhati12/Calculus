@@ -1,5 +1,5 @@
 # Build image from unit test base
-FROM rajivbhati12/ubuntu_unit_test_base
+FROM rajivbhati12/ubuntu_mvn
 
 # Build argument to parametrize command
 ARG Command

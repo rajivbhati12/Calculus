@@ -1,13 +1,14 @@
 
 /* Basic unit test jenkins file*/
 node{
-    stage('Preparation'){
-        build 'UnitTestPreparationJob'
+    stage('Pull git repository'){
+        build 'UnitTestPullGit'
     }
-    stage('Test') {
-        echo "do test task here"
+    stage('Create docker image') {
+        build 'UnitTestCreateDockerImage'
     }
-    stage('Result') {
-        echo "do test conclusion task here"
+    stage('Build Unit Test container'){
+        build 'UnitTestBuildContainer'
     }
+
 }

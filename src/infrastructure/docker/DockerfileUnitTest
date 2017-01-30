@@ -5,21 +5,19 @@ FROM rajivbhati12/ubuntu_mvn
 ARG Command
 
 # Set default build command to run bash
-EVN Command ${Command:-"/bin/bash"}
+ENV Command ${Command:-"/bin/bash"}
 
 # Switch to root user for setup
 USER root
 
-RUN pwd
-
 # Create Project directory
-RUN mkdir -p /Calculus/src
+RUN mkdir /Calculus
 
 # Copy source code to image
-COPY src /Calculus/src
+COPY . /Calculus
 
 # Switch back to testuser
 USER testuser
 
 # Execute build command
-CMD [${Command}]
+CMD ${Command}

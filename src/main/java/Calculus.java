@@ -1,11 +1,12 @@
 /**
  * Created by rajivbhati on 1/28/17.
  */
+
+package main.java;
+
 public class Calculus {
-
-
     public static void main(String[] args){
-        CalculusAddition calculusAddition = new CalculusAddition();
+        Addition calculusAddition = new Addition();
         double output = 0;
         String arg0 = args[0];
 

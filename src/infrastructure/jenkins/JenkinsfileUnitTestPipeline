@@ -1,8 +1,8 @@
 
 /* Basic unit test jenkins file*/
 node{
-    stage('Preperation'){
-        build 'UnitTestJob'
+    stage('Preparation'){
+        build 'UnitTestPreparationJob'
     }
     stage('Test') {
         echo "do test task here"

@@ -1,0 +1,15 @@
+
+/* Basic unit test jenkins file*/
+node{
+    version="$version-$BUILD_NUMBER"
+    stage('Pull git repository'){
+        build job: 'GitPullToNode', parameters: [string(name: 'version', value: "$version")]
+    }
+    stage('Create docker image') {
+        build job: 'CreateDockerImage', parameters: [string(name: 'version', value: "$version")]
+    }
+    stage('Build detach container'){
+        build job: 'BuildDetachContainer', parameters: [string(name: 'version', value: "$version")]
+    }
+
+}

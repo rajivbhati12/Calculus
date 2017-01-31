@@ -2,13 +2,13 @@
 /* Basic unit test jenkins file*/
 node{
     stage('Pull git repository'){
-        build 'UnitTestPullGit', parameters: [[$class: 'StringParameterValue', name: 'version', value: $version]]
+        build job: 'UnitTestPullGit', parameters: [string(name: 'version', value: "$version")]
     }
     stage('Create docker image') {
-        build 'UnitTestCreateDockerImage', parameters: [[$class: 'StringParameterValue', name: 'version', value: $version]]
+        build job: 'UnitTestCreateDockerImage', parameters: [string(name: 'version', value: "$version")]
     }
     stage('Build Unit Test container'){
-        build 'UnitTestBuildContainer', parameters: [[$class: 'StringParameterValue', name: 'version', value: $version]]
+        build job: 'UnitTestBuildContainer', parameters: [string(name: 'version', value: "$version")]
     }
 
 }
